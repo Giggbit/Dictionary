@@ -29,7 +29,7 @@ namespace Exam_task_Dictionary
             Console.WriteLine("Welcome to dictionary!");
             bool exit = false;
             while (exit != true) {
-                Console.Write("Choose process:   1.Create  2.Add  3.Edit  4.Delete  5.Print  6.Exit\nAnswer: ");
+                Console.Write("Choose process:   1.Create  2.Add  3.Edit  4.Delete  5.Print  6.Find  7.Exit\nAnswer: ");
                 try {
                     string c = Console.ReadLine();
                     int choose = Convert.ToInt32(c);
@@ -63,6 +63,11 @@ namespace Exam_task_Dictionary
                             break;
 
                         case 6:
+                            dict.Find(dict.dictionary);
+                            Console.WriteLine();
+                            break;
+
+                        case 7:
                             exit = true;
                             break;
                     }
