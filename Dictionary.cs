@@ -61,13 +61,18 @@ namespace Exam_task_Dictionary
                 string translate = Console.ReadLine();
                 dic.Remove(find);
                 lines.RemoveAt(index);
+
+                string save = null;
+                foreach (var i in dic) {
+                    save += $"{i.Key} - {i.Value}\n";
+                }
                 File.WriteAllLines($"{file}", lines);
                 dic.Add(word, translate);
                 string text = null;
                 foreach(var i in dic) {
                     text += $"{i.Key} - {i.Value}\n";
                 }
-                File.WriteAllText(file,text);
+                File.WriteAllText(file, text);
             }
             else { Console.WriteLine("Didn't find this word!"); }
         }
